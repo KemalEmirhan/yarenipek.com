@@ -1,7 +1,8 @@
+import React, { FunctionComponent } from "react";
 import Head from 'next/head'
 import Heading from "../components/heading";
 
-export default function Home() {
+const Home: FunctionComponent = () => {
   return (
     <div className="container">
       <Head>
@@ -19,3 +20,5 @@ export default function Home() {
     </div>
   )
 }
+
+export default Home;
