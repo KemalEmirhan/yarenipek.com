@@ -1,8 +1,11 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useState } from "react";
 import Head from 'next/head'
 import Heading from "../components/heading";
+import { About, Articles } from "@components/index";
 
 const Home: FunctionComponent = () => {
+  const [activeSection, setActiveSection] = useState(1); // 1 = About, 2 = Articles
+
   return (
     <div className="container">
       <Head>
@@ -13,9 +16,11 @@ const Home: FunctionComponent = () => {
 
       <main>
         <Heading />
-        <h1 className="title">
-          Hi! I'm Yaren Ipek
-        </h1>
+        {activeSection === 1 ? (
+          <About /> 
+        ) : (
+          <Articles />
+        )}
       </main>
     </div>
   )
